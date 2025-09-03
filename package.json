@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "@storyblok/react": "^5.0.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
