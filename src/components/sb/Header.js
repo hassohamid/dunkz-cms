@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Header({ blok }) {
   return (
-    <header {...storyblokEditable(blok)} className="border-b ">
+    <header {...storyblokEditable(blok)} className="border-b border-border ">
       {/* Promo Banner */}
       {blok.promo_banner?.[0] && <PromoBanner blok={blok.promo_banner[0]} />}
 
@@ -17,8 +17,8 @@ export default function Header({ blok }) {
           {blok.logo?.filename && (
             <img
               src={blok.logo.filename}
-              alt="Logo"
-              className="h-8 w-8 rounded-full object-cover object-center"
+              alt={blok.logo.alt}
+              className="h-8 w-8 rounded-lg object-cover object-center"
             />
           )}
           {blok.website_name?.[0] && (
