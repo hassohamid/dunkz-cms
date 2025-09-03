@@ -20,6 +20,7 @@ export default async function RootLayout({ children }) {
       <html lang="en">
         <body>
           {config.header?.[0] && <Header blok={config.header[0]} />}
+
           {children}
           {config.footer?.[0] && <Footer blok={config.footer[0]} />}
         </body>

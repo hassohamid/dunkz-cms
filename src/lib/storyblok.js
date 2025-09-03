@@ -1,10 +1,6 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 
 import Page from "@/components/sb/Page";
-import Teaser from "@/components/sb/Teaser";
-import Feature from "@/components/sb/Feature";
-import Grid from "@/components/sb/Grid";
-import DoesNotExist from "@/components/sb/DoesNotExist";
 import Hero from "@/components/sb/Hero";
 import Header from "@/components/sb/Header";
 import MenuItem from "@/components/sb/MenuItem";
@@ -16,11 +12,7 @@ import PromoBanner from "@/components/sb/PromoBanner";
 export const components = {
   // Add your components here
   page: Page,
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
   hero: Hero,
-  doesNotExist: DoesNotExist,
   header: Header,
   menu_item: MenuItem,
   footer: Footer,
