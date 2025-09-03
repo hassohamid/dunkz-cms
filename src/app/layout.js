@@ -3,6 +3,9 @@ import StoryBlokProvider from "@/components/StoryBlokProvider";
 import { getStoryblokApi } from "@/lib/storyblok";
 import Header from "@/components/sb/Header";
 import Footer from "@/components/sb/Footer";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default async function RootLayout({ children }) {
   const storyblokApi = getStoryblokApi();
