@@ -8,6 +8,9 @@ import Footer from "@/components/sb/Footer";
 import FooterColumn from "@/components/sb/FooterColumn";
 import FooterLink from "@/components/sb/FooterLink";
 import PromoBanner from "@/components/sb/PromoBanner";
+import CTA from "@/components/sb/CTA";
+import Review from "@/components/sb/Review";
+import Reviews from "@/components/sb/Reviews";
 
 export const components = {
   // Add your components here
@@ -19,6 +22,9 @@ export const components = {
   footer_column: FooterColumn,
   footer_link: FooterLink,
   promo_banner: PromoBanner,
+  click_to_action: CTA,
+  review: Review,
+  reviews: Reviews,
 };
 
 /**
