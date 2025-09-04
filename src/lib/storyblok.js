@@ -12,6 +12,8 @@ import CTA from "@/components/sb/CTA";
 import Review from "@/components/sb/Review";
 import Reviews from "@/components/sb/Reviews";
 import Slide from "@/components/sb/Slide";
+import Product from "@/components/sb/Product";
+import ProductShowcase from "@/components/sb/ProductShowcase";
 
 export const components = {
   // Add your components here
@@ -27,6 +29,8 @@ export const components = {
   review: Review,
   reviews: Reviews,
   slide: Slide,
+  product: Product,
+  product_showcase: ProductShowcase,
 };
 
 /**
