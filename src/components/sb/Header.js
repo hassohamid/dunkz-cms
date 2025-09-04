@@ -43,7 +43,7 @@ export default function Header({ blok }) {
               </div>
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="search"
                 className="bg-white pl-10 rounded-md py-1.5 pr-1.5 text-sm text-gray-500 outline-0 "
               />
             </div>
@@ -63,7 +63,7 @@ export default function Header({ blok }) {
             <SheetTrigger className="md:hidden">
               <Menu className="h-6 w-6" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 p-6">
+            <SheetContent side="right" className="w-55 p-2 ">
               <div className="flex flex-col gap-8 mt-8">
                 {/* Mobile Search */}
                 {blok.search_enabled && (
@@ -73,16 +73,24 @@ export default function Header({ blok }) {
                     </div>
                     <input
                       type="text"
-                      placeholder="Search"
-                      className="w-full bg-white pl-10 rounded-md py-3 text-sm text-gray-500 border border-gray-200 "
+                      placeholder="search"
+                      className="w-full bg-white pl-10 rounded-md py-3 text-sm text-gray-500 outline-none   "
                     />
                   </div>
                 )}
 
                 {/* Mobile Menu Items */}
-                <nav className="flex flex-col gap-6">
+                <nav className="flex flex-col  justify-center min-h-[60vh] ">
+                  <h1 className="tracking-widest  text-muted-foreground/40 mb-5 ">
+                    {" "}
+                    navigate;{" "}
+                  </h1>
                   {blok.menu?.map((item) => (
-                    <div key={item._uid} className="py-2">
+                    <div
+                      key={item._uid}
+                      className="text-xl py-2 border-b w-full
+                    "
+                    >
                       <MenuItem blok={item} />
                     </div>
                   ))}

@@ -5,7 +5,7 @@ export default function MenuItem({ blok }) {
   return (
     <div
       {...storyblokEditable(blok)}
-      className="relative group tracking-tight font-medium  text-primary"
+      className="relative group tracking-tight font-medium text-primary"
     >
       <a
         href={blok.link?.url || "#"}

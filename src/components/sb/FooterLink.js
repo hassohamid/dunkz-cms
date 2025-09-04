@@ -7,7 +7,7 @@ export default function FooterLink({ blok }) {
     <Link
       {...storyblokEditable(blok)}
       href={blok.url?.url || "#"}
-      className="text-sm text-gray-600 hover:underline"
+      className="text-gray-600 hover:text-gray-900 transition-colors block"
     >
       {blok.label}
     </Link>
