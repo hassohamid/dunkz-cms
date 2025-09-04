@@ -1,6 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
-import CTA from "./CTA";
+import CTA from "../reusable/CTA";
 import {
   Carousel,
   CarouselContent,

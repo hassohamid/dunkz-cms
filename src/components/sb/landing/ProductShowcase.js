@@ -1,7 +1,7 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
-import Product from "./Product";
-import CTA from "./CTA";
+import Product from "../reusable/Product";
+import CTA from "../reusable/CTA";
 
 export default function ProductShowcase({ blok }) {
   return (

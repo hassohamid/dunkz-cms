@@ -1,19 +1,19 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 
 import Page from "@/components/sb/Page";
-import Hero from "@/components/sb/Hero";
-import Header from "@/components/sb/Header";
-import MenuItem from "@/components/sb/MenuItem";
-import Footer from "@/components/sb/Footer";
-import FooterColumn from "@/components/sb/FooterColumn";
-import FooterLink from "@/components/sb/FooterLink";
-import PromoBanner from "@/components/sb/PromoBanner";
-import CTA from "@/components/sb/CTA";
-import Review from "@/components/sb/Review";
-import Reviews from "@/components/sb/Reviews";
-import Slide from "@/components/sb/Slide";
-import Product from "@/components/sb/Product";
-import ProductShowcase from "@/components/sb/ProductShowcase";
+import Hero from "@/components/sb/landing/Hero";
+import Header from "@/components/sb/header/Header";
+import MenuItem from "@/components/sb/header/MenuItem";
+import Footer from "@/components/sb/footer/Footer";
+import FooterColumn from "@/components/sb/footer/FooterColumn";
+import FooterLink from "@/components/sb/footer/FooterLink";
+import PromoBanner from "@/components/sb/header/PromoBanner";
+import CTA from "@/components/sb/reusable/CTA";
+import Slide from "@/components/sb/landing/Slide";
+import Product from "@/components/sb/reusable/Product";
+import ProductShowcase from "@/components/sb/landing/ProductShowcase";
+import Review from "@/components/sb/reusable/Review";
+import Reviews from "@/components/sb/reusable/Reviews";
 
 export const components = {
   // Add your components here

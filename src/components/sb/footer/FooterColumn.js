@@ -5,8 +5,8 @@ import FooterLink from "./FooterLink";
 export default function FooterColumn({ blok }) {
   return (
     <div {...storyblokEditable(blok)}>
-      <h3 className="font-semibold text-gray-900 mb-4 text-lg">{blok.title}</h3>
-      <ul className="space-y-3">
+      <h3 className="font-bold mb-6 tracking-tight text-md">{blok.title}</h3>
+      <ul className="space-y-2 ">
         {blok.links?.map((link) => (
           <li key={link._uid}>
             <FooterLink blok={link} />

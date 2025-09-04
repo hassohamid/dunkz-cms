@@ -1,10 +1,10 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
-import MenuItem from "./MenuItem";
 import PromoBanner from "./PromoBanner";
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
+import MenuItem from "./MenuItem";
 
 export default function Header({ blok }) {
   return (

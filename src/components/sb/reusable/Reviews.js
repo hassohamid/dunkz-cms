@@ -6,7 +6,7 @@ import Review from "./Review";
 export default function Reviews({ blok }) {
   return (
     <div {...storyblokEditable(blok)} className="py-20 relative ">
-      <Marquee pauseOnHover>
+      <Marquee pauseOnHover repeat={10}>
         {blok.reviews?.map((review) => (
           <Review key={review._uid} blok={review} />
         ))}

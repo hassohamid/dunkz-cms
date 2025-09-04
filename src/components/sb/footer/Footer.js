@@ -31,7 +31,7 @@ export default function Footer({ blok }) {
 
           {/* Footer Columns */}
           <div className="lg:col-span-3">
-            <div className="grid gap-8 sm:grid-cols-3">
+            <div className="grid gap-8 grid-cols-2 sm:grid-cols-3">
               {blok.columns?.map((col) => (
                 <FooterColumn blok={col} key={col._uid} />
               ))}
