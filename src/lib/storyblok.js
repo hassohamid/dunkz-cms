@@ -11,6 +11,7 @@ import PromoBanner from "@/components/sb/PromoBanner";
 import CTA from "@/components/sb/CTA";
 import Review from "@/components/sb/Review";
 import Reviews from "@/components/sb/Reviews";
+import Slide from "@/components/sb/Slide";
 
 export const components = {
   // Add your components here
@@ -25,6 +26,7 @@ export const components = {
   click_to_action: CTA,
   review: Review,
   reviews: Reviews,
+  slide: Slide,
 };
 
 /**
