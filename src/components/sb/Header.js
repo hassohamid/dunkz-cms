@@ -4,6 +4,7 @@ import MenuItem from "./MenuItem";
 import PromoBanner from "./PromoBanner";
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Link from "next/link";
 
 export default function Header({ blok }) {
   return (
@@ -22,9 +23,9 @@ export default function Header({ blok }) {
             />
           )}
           {blok.website_name?.[0] && (
-            <span className="font-bold text-lg">
+            <Link href="/" className="font-bold text-lg">
               {blok.website_name[0].text}
-            </span>
+            </Link>
           )}
 
           {/* Desktop Menu - Hidden on mobile */}

@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
+import Link from "next/link";
 
 export default function PromoBanner({ blok }) {
   return (
@@ -8,9 +9,9 @@ export default function PromoBanner({ blok }) {
       className="w-full text-center text-sm py-2 text-white tracking-tight font-semibold bg-black"
     >
       {blok.link?.url ? (
-        <a href={blok.link.url} className="underline">
+        <Link href={blok.link.url} className="underline">
           {blok.text}
-        </a>
+        </Link>
       ) : (
         <span>{blok.text}</span>
       )}

@@ -2,6 +2,7 @@
 
 import { storyblokEditable } from "@storyblok/react";
 import { Button as ShadcnButton } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CTA({ blok }) {
   return (
@@ -11,7 +12,7 @@ export default function CTA({ blok }) {
       className="mt-5 py-6 text-md tracking-tight px-12 rounded-xs "
       variant={blok.variant || "default"}
     >
-      <a href={blok.link?.url || "#"}>{blok.label}</a>
+      <Link href={blok.link?.url || "#"}>{blok.label}</Link>
     </ShadcnButton>
   );
 }
