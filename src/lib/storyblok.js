@@ -14,6 +14,8 @@ import Product from "@/components/sb/reusable/Product";
 import ProductShowcase from "@/components/sb/landing/ProductShowcase";
 import Review from "@/components/sb/reusable/Review";
 import Reviews from "@/components/sb/reusable/Reviews";
+import SectionBanner from "@/components/sb/reusable/SectionBanner";
+import About from "@/components/sb/about/About";
 
 export const components = {
   // Add your components here
@@ -31,6 +33,8 @@ export const components = {
   slide: Slide,
   product: Product,
   product_showcase: ProductShowcase,
+  section_banner: SectionBanner,
+  about: About,
 };
 
 /**

@@ -25,10 +25,10 @@ export default function Footer({ blok }) {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full pl-12 pr-3 py-2 text-gray-200 bg-white outline-none border border-gray-700 focus:border-gray-500 shadow-sm rounded-lg placeholder-gray-400"
+                      className="w-full pl-12 pr-3 py-2 text-gray-600 bg-white outline-none  shadow-sm rounded-lg placeholder-gray-400"
                     />
                   </div>
-                  <button className="block w-auto py-3 px-4 font-medium text-sm text-center text-white bg-blue-500 hover:bg-blue-400 cursor-pointer rounded-lg shadow">
+                  <button className=" w-auto py-3 px-4 font-medium text-sm text-center text-white bg-blue-500 hover:bg-blue-400 cursor-pointer rounded-lg ">
                     Subscribe
                   </button>
                 </div>

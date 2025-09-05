@@ -5,7 +5,7 @@ import CTA from "../reusable/CTA";
 
 export default function ProductShowcase({ blok }) {
   return (
-    <section {...storyblokEditable(blok)} className="py-16 bg-gray-50">
+    <section {...storyblokEditable(blok)} className="py-16 bg-gray-50  ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

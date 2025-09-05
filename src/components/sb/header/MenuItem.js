@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
+import Link from "next/link";
 
 export default function MenuItem({ blok }) {
   return (
@@ -7,12 +8,12 @@ export default function MenuItem({ blok }) {
       {...storyblokEditable(blok)}
       className="relative group tracking-tight font-medium text-primary"
     >
-      <a
-        href={blok.link?.url || "#"}
+      <Link
+        href={blok.url?.cached_url}
         className="hover:text-primary/80 transition-colors"
       >
         {blok.label}
-      </a>
+      </Link>
 
       {/* for the dropdown incase we create */}
       {blok.children?.length > 0 && (
