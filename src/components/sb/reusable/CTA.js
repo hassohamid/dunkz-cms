@@ -6,13 +6,15 @@ import Link from "next/link";
 
 export default function CTA({ blok }) {
   return (
-    <ShadcnButton
-      {...storyblokEditable(blok)}
-      asChild
-      className="mt-5 py-6 text-md tracking-tight px-12 rounded-xs "
-      variant={blok.variant || "default"}
-    >
-      <Link href={blok.link?.url || "#"}>{blok.label}</Link>
-    </ShadcnButton>
+    <div className="flex items-center justify-center pb-5">
+      <ShadcnButton
+        {...storyblokEditable(blok)}
+        asChild
+        className="mt-5 py-6 text-md tracking-tight px-12 rounded-xs font-light "
+        variant={blok.variant || "default"}
+      >
+        <Link href={blok.link?.cached_url}>{blok.label}</Link>
+      </ShadcnButton>
+    </div>
   );
 }
