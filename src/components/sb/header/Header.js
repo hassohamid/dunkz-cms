@@ -2,7 +2,12 @@
 import { storyblokEditable } from "@storyblok/react";
 import PromoBanner from "./PromoBanner";
 import { Search, ShoppingBag, Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import Link from "next/link";
 import MenuItem from "./MenuItem";
 
@@ -91,7 +96,14 @@ export default function Header({ blok }) {
                       className="text-xl py-2 border-b w-full
                     "
                     >
-                      <MenuItem blok={item} />
+                      <SheetClose asChild>
+                        <Link
+                          href={item.url?.cached_url}
+                          className="hover:text-primary/80 transition-colors block"
+                        >
+                          {item.label}
+                        </Link>
+                      </SheetClose>
                     </div>
                   ))}
                 </nav>
