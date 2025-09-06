@@ -2,6 +2,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import Product from "../reusable/Product";
 import CTA from "../reusable/CTA";
+import Press from "../reusable/Press";
 
 export default function ProductShowcase({ blok }) {
   return (
@@ -32,6 +33,8 @@ export default function ProductShowcase({ blok }) {
           </div>
         )}
       </div>
+      {/* Press Section */}
+      {blok.press?.[0] && <Press blok={blok.press[0]} />}
     </section>
   );
 }
