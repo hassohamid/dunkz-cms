@@ -10,10 +10,37 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import MenuItem from "./MenuItem";
+import { useState, useEffect } from "react";
 
 export default function Header({ blok }) {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // If scrolling DOWN and past 100px → HIDE navbar
+        setIsVisible(false);
+      } else {
+        // If scrolling UP → SHOW navbar
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY); // Remember current position
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => window.removeEventListener("scroll", controlNavbar);
+    }
+  }, [lastScrollY]);
+
   return (
-    <header {...storyblokEditable(blok)} className="border-b border-border ">
+    <header
+      {...storyblokEditable(blok)}
+      className={`border-b border-border sticky top-0 z-50 bg-white transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       {/* Promo Banner */}
       {blok.promo_banner?.[0] && <PromoBanner blok={blok.promo_banner[0]} />}
 
@@ -34,7 +61,7 @@ export default function Header({ blok }) {
           )}
 
           {/* Desktop Menu - Hidden on mobile */}
-          <nav className="hidden md:flex gap-8 ml-6 ">
+          <nav className="hidden md:flex gap-8 ml-6">
             {blok.menu?.map((item) => (
               <MenuItem blok={item} key={item._uid} />
             ))}
@@ -49,7 +76,7 @@ export default function Header({ blok }) {
               <input
                 type="text"
                 placeholder="search"
-                className="bg-white pl-10 rounded-md py-1.5 pr-1.5 text-sm text-gray-500 outline-0 "
+                className="bg-white pl-10 rounded-md py-1.5 pr-1.5 text-sm text-gray-500 outline-0"
               />
             </div>
           )}
@@ -68,7 +95,7 @@ export default function Header({ blok }) {
             <SheetTrigger className="md:hidden">
               <Menu className="h-6 w-6" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-55 p-2 ">
+            <SheetContent side="right" className="w-55 p-2">
               <div className="flex flex-col gap-8 mt-8">
                 {/* Mobile Search */}
                 {blok.search_enabled && (
@@ -79,22 +106,20 @@ export default function Header({ blok }) {
                     <input
                       type="text"
                       placeholder="search"
-                      className="w-full bg-white pl-10 rounded-md py-3 text-sm text-gray-500 outline-none   "
+                      className="w-full bg-white pl-10 rounded-md py-3 text-sm text-gray-500 outline-none"
                     />
                   </div>
                 )}
 
                 {/* Mobile Menu Items */}
-                <nav className="flex flex-col  justify-center min-h-[60vh] ">
-                  <h1 className="tracking-widest  text-muted-foreground/40 mb-5 ">
-                    {" "}
-                    navigate;{" "}
+                <nav className="flex flex-col justify-center min-h-[60vh]">
+                  <h1 className="tracking-widest text-muted-foreground/40 mb-5">
+                    navigate;
                   </h1>
                   {blok.menu?.map((item) => (
                     <div
                       key={item._uid}
-                      className="text-xl py-2 border-b w-full
-                    "
+                      className="text-xl py-2 border-b w-full"
                     >
                       <SheetClose asChild>
                         <Link
