@@ -4,6 +4,7 @@ import Header from "@/components/sb/header/Header";
 import Footer from "@/components/sb/footer/Footer";
 import { Inter } from "next/font/google";
 import { getStoryblokConfig } from "@/lib/storyblok";
+import SmoothScrolling from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,7 @@ export default async function RootLayout({ children }) {
     <StoryBlokProvider>
       <html lang="en">
         <body className={inter.className}>
+          <SmoothScrolling />
           {config.header?.[0] && <Header blok={config.header[0]} />}
 
           {children}
