@@ -1,14 +1,17 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
+import Image from "next/image";
 
 export default function SectionBanner({ blok }) {
   return (
     <section {...storyblokEditable(blok)} className="w-full">
       {blok.image?.filename ? (
-        <div className="w-full h-60 md:h-80 lg:h-96 overflow-hidden">
-          <img
+        <div className="relative w-full h-60 md:h-80 lg:h-140   overflow-hidden">
+          <Image
             src={blok.image.filename}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="100vw"
           />
         </div>
       ) : (
