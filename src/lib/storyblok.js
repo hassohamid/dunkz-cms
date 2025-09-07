@@ -18,6 +18,7 @@ import SectionBanner from "@/components/sb/reusable/SectionBanner";
 import About from "@/components/sb/about/About";
 import Press from "@/components/sb/reusable/Press";
 import ProductGrid from "@/components/sb/products/ProductGrid";
+import Filter from "@/components/sb/products/Filter";
 
 export const components = {
   // Add your components here
@@ -39,6 +40,7 @@ export const components = {
   about: About,
   press_logos: Press,
   products_page: ProductGrid,
+  filter: Filter,
 };
 
 /**
