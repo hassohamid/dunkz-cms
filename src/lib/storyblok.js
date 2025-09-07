@@ -2,12 +2,12 @@ import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 
 import Page from "@/components/sb/Page";
 import Hero from "@/components/sb/landing/Hero";
-import Header from "@/components/sb/header/Header";
-import MenuItem from "@/components/sb/header/MenuItem";
-import Footer from "@/components/sb/footer/Footer";
-import FooterColumn from "@/components/sb/footer/FooterColumn";
-import FooterLink from "@/components/sb/footer/FooterLink";
-import PromoBanner from "@/components/sb/header/PromoBanner";
+import Header from "@/components/sb/layout/header/Header";
+import MenuItem from "@/components/sb/layout/header/MenuItem";
+import Footer from "@/components/sb/layout/footer/Footer";
+import FooterColumn from "@/components/sb/layout/footer/FooterColumn";
+import FooterLink from "@/components/sb/layout/footer/FooterLink";
+import PromoBanner from "@/components/sb/layout/header/PromoBanner";
 import CTA from "@/components/sb/reusable/CTA";
 import Slide from "@/components/sb/landing/Slide";
 import Product from "@/components/sb/reusable/Product";
