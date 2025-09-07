@@ -6,9 +6,9 @@ import { Heart } from "lucide-react";
 
 export default function Reviews({ blok }) {
   return (
-    <div {...storyblokEditable(blok)} className="py-20">
+    <div {...storyblokEditable(blok)} className="py-30 max-w-7xl mx-auto">
       {blok.headline && (
-        <div className="w-full bg-white p-8 flex items-center justify-center mb-12 border-b border-l-green-400 border-l-7 max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto relative">
+        <div className="w-full bg-white p-8 flex items-center justify-center mb-12  md:border-l-green-400 md:border-l-7 max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto relative">
           <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extralight tracking-[0.2em] text-center text-black antialiased uppercase">
             {blok.headline}
           </h2>

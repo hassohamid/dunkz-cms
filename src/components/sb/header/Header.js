@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import MenuItem from "./MenuItem";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header({ blok }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -48,11 +49,15 @@ export default function Header({ blok }) {
         {/* Left side: Logo + Website Name */}
         <div className="flex items-center gap-2">
           {blok.logo?.filename && (
-            <img
-              src={blok.logo.filename}
-              alt={blok.logo.alt}
-              className="h-8 w-8 rounded-lg object-cover object-center"
-            />
+            <div className="relative h-8 w-8">
+              <Image
+                src={blok.logo.filename}
+                alt={blok.logo.alt || "Logo"}
+                fill
+                className="rounded-lg object-cover object-center"
+                sizes="32px"
+              />
+            </div>
           )}
           {blok.website_name?.[0] && (
             <Link href="/" className="font-bold text-lg">

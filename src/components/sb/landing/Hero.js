@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 export default function Hero({ blok }) {
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }));
@@ -29,24 +30,31 @@ export default function Hero({ blok }) {
 
       {/* Carousel for slides */}
       {blok.slides?.length > 0 && (
-        <Carousel plugins={[plugin.current]} className="">
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full max-w-4xl mx-auto"
+        >
           <CarouselContent>
             {blok.slides.map((slide) => (
               <CarouselItem key={slide._uid}>
                 {slide.image?.filename && (
-                  <img
-                    src={slide.image.filename}
-                    alt="Hero slide"
-                    className="w-full h-full object-cover"
-                    style={{
-                      maskImage:
-                        "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
-                      WebkitMaskImage:
-                        "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
-                      maskComposite: "intersect",
-                      WebkitMaskComposite: "intersect",
-                    }}
-                  />
+                  <div className="relative w-full h-96 md:h-[500px]">
+                    <Image
+                      src={slide.image.filename}
+                      alt="Hero slide"
+                      fill
+                      className="object-cover"
+                      style={{
+                        maskImage:
+                          "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
+                        WebkitMaskImage:
+                          "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
+                        maskComposite: "intersect",
+                        WebkitMaskComposite: "intersect",
+                      }}
+                      sizes="(max-width: 768px) 100vw, 1200px"
+                    />
+                  </div>
                 )}
               </CarouselItem>
             ))}

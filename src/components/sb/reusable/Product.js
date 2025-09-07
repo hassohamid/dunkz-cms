@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Product({ blok }) {
@@ -9,12 +10,14 @@ export default function Product({ blok }) {
       href={blok.link?.url || "#"}
       className="group block"
     >
-      <div className="bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-90 transition-opacity">
+      <div className="relative bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-90 transition-opacity w-full h-48 md:h-76">
         {blok.image?.filename && (
-          <img
+          <Image
             src={blok.image.filename}
             alt={blok.name || "Product"}
+            fill
             className="object-cover"
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
         )}
       </div>
