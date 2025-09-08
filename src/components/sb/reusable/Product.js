@@ -7,7 +7,7 @@ export default function Product({ blok }) {
   return (
     <Link
       {...storyblokEditable(blok)}
-      href={blok.link?.url || "#"}
+      href={`/products/${blok.slug}`}
       className="group block"
     >
       <div className="relative bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-90 transition-opacity w-full h-48 md:h-76">

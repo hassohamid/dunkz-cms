@@ -19,6 +19,7 @@ import About from "@/components/sb/about/About";
 import Press from "@/components/sb/reusable/Press";
 import ProductGrid from "@/components/sb/products/ProductGrid";
 import Filter from "@/components/sb/products/Filter";
+import ProductPage from "@/components/sb/products/ProductPage";
 
 export const components = {
   // Add your components here
@@ -41,6 +42,7 @@ export const components = {
   press_logos: Press,
   products_page: ProductGrid,
   filter: Filter,
+  product_page: ProductPage,
 };
 
 /**

@@ -9,7 +9,7 @@ export default function MenuItem({ blok }) {
       className="relative group tracking-tight font-medium text-primary"
     >
       <Link
-        href={blok.url?.cached_url}
+        href={`/${blok.url?.cached_url?.replace(/^\/+/, "")}`} // fix navigation issue /prod/prod etc
         className="hover:text-primary/80 transition-colors"
       >
         {blok.label}
