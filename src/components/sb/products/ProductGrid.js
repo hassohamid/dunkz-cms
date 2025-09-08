@@ -2,32 +2,53 @@
 import { storyblokEditable } from "@storyblok/react";
 import Filter from "./Filter";
 import Product from "../reusable/Product";
+import { HyperText } from "@/components/magicui/hyper-text";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
 export default function ProductGrid({ blok }) {
-  return (
-    <section {...storyblokEditable(blok)} className="py-12 max-w-7xl mx-auto">
-      {/* Header */}
-      {blok.header && (
-        <h1 className="text-3xl font-bold mb-2 text-center">{blok.header}</h1>
-      )}
-      {blok.description && (
-        <p className="text-center text-gray-600 mb-8">{blok.description}</p>
-      )}
+  const getTypewriterWords = (text) => {
+    if (!text) return [];
+    return text.split("   ").map((word) => ({
+      text: word,
+    }));
+  };
 
-      {/* Filter bar */}
-      {blok.filters?.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {blok.filters.map((filter) => (
-            <Filter blok={filter} key={filter._uid} />
+  return (
+    <section {...storyblokEditable(blok)} className="bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Header */}
+        {blok.header && (
+          <div className="text-center mb-12">
+            <HyperText
+              animateOnHover={false}
+              className="lowercase tracking-tighter  text-shadow-amber-400 text-shadow-2xs"
+            >
+              {blok.header}
+            </HyperText>
+            {blok.description && (
+              <TypewriterEffectSmooth
+                words={getTypewriterWords(blok.description)}
+                cursorClassName="hidden"
+              />
+            )}
+          </div>
+        )}
+
+        {/* Filter bar */}
+        {blok.filters?.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-2 mb-12 pb-8 border-b border-gray-100">
+            {blok.filters.map((filter) => (
+              <Filter blok={filter} key={filter._uid} />
+            ))}
+          </div>
+        )}
+
+        {/* Product grid - 2 cols on mobile, responsive up */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          {blok.products?.map((product) => (
+            <Product blok={product} key={product._uid} />
           ))}
         </div>
-      )}
-
-      {/* Product grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {blok.products?.map((product) => (
-          <Product blok={product} key={product._uid} />
-        ))}
       </div>
     </section>
   );

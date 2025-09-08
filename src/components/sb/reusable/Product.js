@@ -8,27 +8,38 @@ export default function Product({ blok }) {
     <Link
       {...storyblokEditable(blok)}
       href={`/products/${blok.slug}`}
-      className="group block"
+      className="group block "
     >
-      <div className="relative bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-90 transition-opacity w-full h-48 md:h-76">
+      {/* Image container */}
+      <div className="relative aspect-square mb-3 overflow-hidden bg-transparent rounded-lg">
         {blok.image?.filename && (
           <Image
             src={blok.image.filename}
-            alt={blok.name || "Product"}
+            alt={blok.name || "product"}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
           />
         )}
+
+        {/* Subtle overlay on hover */}
+        <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      {blok.name && <h3 className="mt-3 text-sm  font-bold">{blok.name}</h3>}
+      {/* Product info */}
+      <div className="space-y-1">
+        {blok.name && (
+          <h3 className="text-sm md:text-base font-medium text-gray-900 lowercase leading-tight group-hover:text-gray-700 transition-colors">
+            {blok.name}
+          </h3>
+        )}
 
-      {blok.price && (
-        <p className="mt-1 text-sm text-gray-700 tracking-tight font-medium">
-          ${blok.price}
-        </p>
-      )}
+        {blok.price && (
+          <p className="text-sm md:text-base text-gray-700 font-light">
+            ${blok.price}
+          </p>
+        )}
+      </div>
     </Link>
   );
 }
