@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Product({ blok }) {
+  console.log("Product blok data:", blok);
+
   return (
     <Link
       {...storyblokEditable(blok)}
