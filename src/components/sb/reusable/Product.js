@@ -26,7 +26,7 @@ export default function Product({ blok }) {
 
       {blok.price && (
         <p className="mt-1 text-sm text-gray-700 tracking-tight font-medium">
-          {blok.price}
+          ${blok.price}
         </p>
       )}
     </Link>
