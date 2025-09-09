@@ -31,13 +31,13 @@ export default function Product({ blok }) {
       {/* Product info */}
       <div className="space-y-1">
         {blok.name && (
-          <h3 className="text-sm md:text-base font-medium text-gray-900 lowercase leading-tight group-hover:text-gray-700 transition-colors">
+          <h3 className="text-sm md:text-base font-bold lowercase leading-tight  ">
             {blok.name}
           </h3>
         )}
 
         {blok.price && (
-          <p className="text-sm md:text-base text-gray-700 font-light">
+          <p className="text-sm md:text-base font-normal tracking-tight">
             ${blok.price}
           </p>
         )}

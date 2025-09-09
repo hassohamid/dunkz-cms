@@ -38,7 +38,7 @@ export default function Hero({ blok }) {
             {blok.slides.map((slide) => (
               <CarouselItem key={slide._uid}>
                 {slide.image?.filename && (
-                  <div className="relative w-full h-96 md:h-[500px]">
+                  <div className="relative w-full h-96 md:h-[500px] mt-10 ">
                     <Image
                       src={slide.image.filename}
                       alt="Hero slide"

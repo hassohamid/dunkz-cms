@@ -91,7 +91,7 @@ export default function Header({ blok }) {
         <div className="flex items-center gap-4">
           {/* Shopping Bag */}
           {blok.show_cart && (
-            <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors relative">
+            <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors relative ">
               <ShoppingBag size={20} />
             </button>
           )}
