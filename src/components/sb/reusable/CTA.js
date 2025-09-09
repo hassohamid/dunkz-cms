@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CTA({ blok }) {
   return (
-    <div className="flex items-center justify-center pb-5">
+    <div className="pb-5">
       <ShadcnButton
         {...storyblokEditable(blok)}
         asChild
