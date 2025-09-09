@@ -90,10 +90,11 @@ export default function Header({ blok }) {
         {/* Right side: Shopping Bag + Mobile Menu */}
         <div className="flex items-center gap-4">
           {/* Shopping Bag */}
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="h-5 w-5" />
-            <span className="text-sm">3</span>
-          </div>
+          {blok.show_cart && (
+            <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors relative">
+              <ShoppingBag size={20} />
+            </button>
+          )}
 
           {/* Mobile Menu Button - Only visible on mobile */}
           <Sheet>
