@@ -22,7 +22,7 @@ export default function ProductGrid({ blok }) {
       try {
         const { data } = await getStoryblokApi().get("cdn/stories", {
           starts_with: "products/",
-          version: "draft",
+          version: "published",
           per_page: 25,
         });
 

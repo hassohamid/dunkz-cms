@@ -63,7 +63,7 @@ export const getStoryblokApi = storyblokInit({
 export const getStoryblokConfig = async () => {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get("cdn/stories/config", {
-    version: "draft",
+    version: "published",
   });
   return data.story.content;
 };
