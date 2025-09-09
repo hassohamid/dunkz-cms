@@ -87,7 +87,12 @@ export default function ProductGrid({ blok }) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {filteredProducts.map((product) => (
-            <Product blok={product} key={product._uid} />
+            <Product
+              blok={product}
+              key={product._uid}
+              showBadge={true}
+              badgeText={blok.badge_text}
+            />
           ))}
         </div>
 
