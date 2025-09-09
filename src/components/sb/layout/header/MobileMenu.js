@@ -25,7 +25,7 @@ export default function MobileMenu({ blok }) {
               <div key={item._uid} className="text-xl py-2 border-b w-full">
                 <SheetClose asChild>
                   <Link
-                    href={item.url?.cached_url}
+                    href={`/${item.url?.cached_url?.replace(/^\/+/, "") || ""}`}
                     className="hover:text-primary/70 transition-colors tracking-tight text-primary/90 block"
                   >
                     {item.label}
